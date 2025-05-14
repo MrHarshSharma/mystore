@@ -168,6 +168,19 @@
   .categoryItem {
     height: 40vh;
   }
+  
+  .infoContainer, .footerContainer {
+    flex-direction: column;
+    gap: 3rem;
+  }
+  
+  .infoColumn, .footerColumn {
+    text-align: center;
+  }
+  
+  .infoSection {
+    display: none;
+  }
 }
 
 @media (max-width: 640px) {
@@ -181,5 +194,195 @@
   
   .categoryTitle {
     font-size: 1rem;
+  }
+}
+
+/* Info Section Styles */
+.infoSection {
+  background-color: #f9f6f2;
+  padding: 4rem 2rem;
+  border-top: 1px solid #e5e5e5;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.infoContainer {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.infoColumn {
+  flex: 1;
+  text-align: center;
+}
+
+.infoTitle {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  letter-spacing: 1px;
+}
+
+.infoText {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: #666;
+  margin-bottom: 1rem;
+}
+
+/* Footer Styles */
+.footer {
+  background-color: #f9f6f2;
+  padding: 4rem 2rem 2rem;
+}
+
+.footerContainer {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+  margin-bottom: 4rem;
+}
+
+.footerColumn {
+  flex: 1;
+}
+
+.footerTitle {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  letter-spacing: 1px;
+}
+
+.footerList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footerList li {
+  margin-bottom: 0.8rem;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.footerList a {
+  text-decoration: none;
+  color: #666;
+  transition: color 0.2s;
+}
+
+.footerList a:hover {
+  color: #333;
+}
+
+.newsletterForm {
+  display: flex;
+  margin-bottom: 2rem;
+}
+
+.emailInput {
+  flex: 1;
+  padding: 0.8rem;
+  border: 1px solid #ddd;
+  background-color: transparent;
+  font-size: 0.9rem;
+}
+
+.submitButton {
+  background-color: #333;
+  color: white;
+  border: none;
+  padding: 0 1.5rem;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.socialIcons {
+  display: flex;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+  justify-content: center;
+}
+
+.reactIcon {
+  font-size: 1.5rem;
+  color: #333;
+  transition: color 0.2s;
+}
+
+.reactIcon:hover {
+  color: #666;
+}
+
+.languageSelector p {
+  margin: 0.5rem 0;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.footerLogo {
+  text-align: center;
+  padding-top: 2rem;
+  border-top: 1px solid #e5e5e5;
+}
+
+.certification {
+  font-size: 0.8rem;
+  color: #666;
+  margin-top: 0.5rem;
+}
+
+/* Add styling for certification logos */
+.certificationLogos {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-top: 1.5rem;
+}
+
+/* Responsive styles for the info section and footer */
+@media (max-width: 1024px) {
+  .infoContainer, .footerContainer {
+    flex-direction: column;
+    gap: 3rem;
+  }
+  
+  .infoColumn, .footerColumn {
+    text-align: center;
+  }
+}
+
+/* Update the media query for mobile view */
+@media (max-width: 768px) {
+  .infoSection {
+    display: none;
+  }
+  
+  .footerColumn:not(:last-child) {
+    display: none;
+  }
+  
+  .footerContainer {
+    flex-direction: column;
+    gap: 0;
+  }
+  
+  .footer {
+    padding: 2rem 1rem;
+  }
+  
+  .footerTitle {
+    font-size: 1.2rem;
+    text-align: center;
+  }
+  
+  .newsletterForm {
+    max-width: 400px;
+    margin: 0 auto 2rem;
   }
 } 

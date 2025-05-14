@@ -1,61 +1,15 @@
 import Image from "next/image";
 import Link from 'next/link';
 import styles from './page.module.css';
+import Header from "./components/Header";
+import InfoSection from "./components/InfoSection";
+import Footer from "./components/Footer";
 
 export default function Home() {
   return (
     <main className={styles.main}>
       {/* Top Navigation Bar */}
-      <nav className={styles.topNavbar}>
-        <div className={styles.mobileNav}>
-          <div className={styles.hamburger}>
-            <span>☰</span>
-          </div>
-          
-          <div className={styles.mobileLogo}>
-            {/* <Link href="/">
-              <Image src="/logo.svg" alt="Sézane" width={120} height={40} />
-            </Link> */}
-          </div>
-          
-          <div className={styles.mobileCart}>
-            <Link href="/cart">
-              <span className={styles.icon}>🛒</span>
-              <span className={styles.cartCount}>0</span>
-            </Link>
-          </div>
-        </div>
-        
-        <div className={styles.logo}>
-          {/* <Link href="/">
-            <Image src="/logo.svg" alt="Sézane" width={120} height={40} />
-          </Link> */}
-        </div>
-        
-        <div className={styles.mainNav}>
-          <Link href="/shop">SHOP</Link>
-          <Link href="/new-in">NEW IN</Link>
-          <Link href="/shirts">SHIRTS</Link>
-          <Link href="/essentials">ESSENTIALS</Link>
-          <Link href="/accessories">ACCESSORIES</Link>
-          <Link href="/last-chance">LAST CHANCE</Link>
-          <Link href="/about">ABOUT</Link>
-          <Link href="/faq">FAQ</Link>
-          <Link href="/journal">JOURNAL</Link>
-        </div>
-        
-        <div className={styles.navIcons}>
-          <Link href="/search">
-            <span className={styles.icon}>🔍</span>
-          </Link>
-          <Link href="/cart">
-            <span className={styles.icon}>🛒</span>
-            <span className={styles.cartCount}>0</span>
-          </Link>
-          <Link href="/login">LOG IN</Link>
-          <Link href="/language">US (US$) / EN</Link>
-        </div>
-      </nav>
+      <Header />
 
       {/* Product Categories Grid */}
       <div className={styles.categoryGrid}>
@@ -149,6 +103,12 @@ export default function Home() {
           <h2 className={styles.categoryTitle}>JACKETS</h2>
         </div>
       </div>
+
+      {/* Shipping Info Section */}
+      <InfoSection />
+
+      {/* Footer Section */}
+      <Footer />
     </main>
   );
 }

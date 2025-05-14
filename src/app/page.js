@@ -1,103 +1,154 @@
 import Image from "next/image";
+import Link from 'next/link';
+import styles from './page.module.css';
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              src/app/page.js
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+    <main className={styles.main}>
+      {/* Top Navigation Bar */}
+      <nav className={styles.topNavbar}>
+        <div className={styles.mobileNav}>
+          <div className={styles.hamburger}>
+            <span>☰</span>
+          </div>
+          
+          <div className={styles.mobileLogo}>
+            <Link href="/">
+              <Image src="/logo.svg" alt="Sézane" width={120} height={40} />
+            </Link>
+          </div>
+          
+          <div className={styles.mobileCart}>
+            <Link href="/cart">
+              <span className={styles.icon}>🛒</span>
+              <span className={styles.cartCount}>0</span>
+            </Link>
+          </div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+        
+        <div className={styles.logo}>
+          {/* <Link href="/">
+            <Image src="/logo.svg" alt="Sézane" width={120} height={40} />
+          </Link> */}
+        </div>
+        
+        <div className={styles.mainNav}>
+          <Link href="/shop">SHOP</Link>
+          <Link href="/new-in">NEW IN</Link>
+          <Link href="/shirts">SHIRTS</Link>
+          <Link href="/essentials">ESSENTIALS</Link>
+          <Link href="/accessories">ACCESSORIES</Link>
+          <Link href="/last-chance">LAST CHANCE</Link>
+          <Link href="/about">ABOUT</Link>
+          <Link href="/faq">FAQ</Link>
+          <Link href="/journal">JOURNAL</Link>
+        </div>
+        
+        <div className={styles.navIcons}>
+          <Link href="/search">
+            <span className={styles.icon}>🔍</span>
+          </Link>
+          <Link href="/cart">
+            <span className={styles.icon}>🛒</span>
+            <span className={styles.cartCount}>0</span>
+          </Link>
+          <Link href="/login">LOG IN</Link>
+          <Link href="/language">US (US$) / EN</Link>
+        </div>
+      </nav>
+
+      {/* Product Categories Grid */}
+      <div className={styles.categoryGrid}>
+        {/* Row 1 */}
+        <div className={styles.categoryItem}>
+          <div className={styles.categoryImage}>
+            <Image 
+              src="https://media.sezane.com/image/upload/c_crop,fl_progressive:semi,h_1,q_auto:best,w_0.93240093240093,x_0.033799533799534,y_0/c_scale,w_468/jnvtwu56xpqdluhtzqoy.jpg" 
+              alt="New In" 
+              fill 
+            />
+          </div>
+          <h2 className={styles.categoryTitle}>NEW IN</h2>
+        </div>
+
+        <div className={styles.categoryItem}>
+          <div className={styles.categoryImage}>
+            <Image 
+              src="https://media.sezane.com/image/upload/c_crop,fl_progressive:semi,h_1,q_auto:best,w_0.93240093240093,x_0.033799533799534,y_0/c_scale,w_468/ajc05lsnxnovolw4dd8e.jpg" 
+              alt="Bags & Baskets" 
+              fill 
+            />
+          </div>
+          <h2 className={styles.categoryTitle}>BAGS & BASKETS BAGS</h2>
+        </div>
+
+        <div className={styles.categoryItem}>
+          <div className={styles.categoryImage}>
+            <Image 
+              src="https://media.sezane.com/image/upload/c_fill,fl_progressive:semi,q_auto:best,w_468/ob1q707j5kswlffwgeil.jpg" 
+              alt="Dresses" 
+              fill 
+            />
+          </div>
+          <h2 className={styles.categoryTitle}>DRESSES</h2>
+        </div>
+
+        <div className={styles.categoryItem}>
+          <div className={styles.categoryImage}>
+            <Image 
+              src="https://media.sezane.com/image/upload/c_crop,fl_progressive:semi,h_0.71,q_auto:best,w_0.66,x_0.07,y_0.02/c_scale,w_468/yodzmtijlbfcps7l1tgc.jpg" 
+              alt="Shirts & Blouses" 
+              fill 
+            />
+          </div>
+          <h2 className={styles.categoryTitle}>SHIRTS & BLOUSES</h2>
+        </div>
+
+        {/* Row 2 */}
+        <div className={styles.categoryItem}>
+          <div className={styles.categoryImage}>
+            <Image 
+              src="https://media.sezane.com/image/upload/c_crop,fl_progressive:semi,h_0.91,q_auto:best,w_0.85,x_0.14,y_0.07/c_scale,w_468/qpx8dqawa1pimw2evvut.jpg" 
+              alt="Jewelry" 
+              fill 
+            />
+          </div>
+          <h2 className={styles.categoryTitle}>JEWELRY</h2>
+        </div>
+
+        <div className={styles.categoryItem}>
+          <div className={styles.categoryImage}>
+            <Image 
+              src="https://media.sezane.com/image/upload/c_crop,fl_progressive:semi,h_1,q_auto:best,w_0.93240093240093,x_0.033799533799534,y_0/c_scale,w_468/hafnugjqf4k9nqindpnj.jpg" 
+              alt="Shorts & Skirts" 
+              fill 
+            />
+          </div>
+          <h2 className={styles.categoryTitle}>SHORTS & SKIRTS</h2>
+        </div>
+
+        <div className={styles.categoryItem}>
+          <div className={styles.categoryImage}>
+            <Image 
+              src="https://media.sezane.com/image/upload/c_fill,fl_progressive:semi,q_auto:best,w_468/ix9mrmfxqruekbis7lxq.jpg" 
+              alt="Shoes" 
+              fill 
+            />
+          </div>
+          <h2 className={styles.categoryTitle}>SHOES</h2>
+        </div>
+
+        <div className={styles.categoryItem}>
+          <div className={styles.categoryImage}>
+            <Image 
+              src="https://media.sezane.com/image/upload/c_crop,fl_progressive:semi,h_1,q_auto:best,w_0.93240093240093,x_0.033799533799534,y_0/c_scale,w_468/cgjmjf1l6wkh5qhwhxh6.jpg" 
+              alt="Jackets" 
+              fill 
+            />
+          </div>
+          <h2 className={styles.categoryTitle}>JACKETS</h2>
+        </div>
+      </div>
+    </main>
   );
 }

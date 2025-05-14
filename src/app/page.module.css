@@ -1,0 +1,185 @@
+.main {
+  width: 100%;
+  min-height: 100vh;
+  color: #333;
+  font-family: 'Arial', sans-serif;
+  position: relative;
+}
+
+.topNavbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: transparent;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  color: white;
+}
+
+.logo {
+  flex: 1;
+}
+
+.mainNav {
+  display: flex;
+  gap: 1.5rem;
+  flex: 3;
+  justify-content: center;
+}
+
+.mainNav a {
+  text-decoration: none;
+  color: white;
+  font-size: 0.9rem;
+  font-weight: 500;
+  letter-spacing: 1px;
+}
+
+.navIcons {
+  display: flex;
+  gap: 1rem;
+  flex: 1;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.navIcons a {
+  text-decoration: none;
+  color: white;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+}
+
+.icon {
+  font-size: 1.2rem;
+  position: relative;
+}
+
+.cartCount {
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  background-color: white;
+  color: #333;
+  border-radius: 50%;
+  width: 18px;
+  height: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.7rem;
+}
+
+.categoryGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0;
+  width: 100%;
+}
+
+.categoryItem {
+  position: relative;
+  height: 65vh;
+  overflow: hidden;
+}
+
+.categoryImage {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.categoryTitle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  text-align: center;
+  color: white;
+  font-size: 1.5rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+.mobileMenuIcon {
+  display: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.searchIcon {
+  display: none;
+}
+
+.desktopOnly {
+  display: flex;
+}
+
+.mobileNav {
+  display: none;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #f9f6f2;
+  padding: 0.5rem 1rem;
+}
+
+.hamburger {
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.mobileLogo {
+  display: flex;
+  justify-content: center;
+}
+
+.mobileCart {
+  position: relative;
+}
+
+@media (max-width: 1024px) {
+  .categoryGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .topNavbar {
+    position: relative;
+    background-color: #f9f6f2;
+    color: #333;
+    padding: 0;
+  }
+  
+  .mainNav, .logo, .navIcons {
+    display: none;
+  }
+  
+  .mobileNav {
+    display: flex;
+  }
+  
+  .categoryItem {
+    height: 40vh;
+  }
+}
+
+@media (max-width: 640px) {
+  .categoryGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .categoryItem {
+    height: 45vh;
+  }
+  
+  .categoryTitle {
+    font-size: 1rem;
+  }
+} 

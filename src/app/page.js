@@ -13,9 +13,9 @@ export default function Home() {
           </div>
           
           <div className={styles.mobileLogo}>
-            <Link href="/">
+            {/* <Link href="/">
               <Image src="/logo.svg" alt="Sézane" width={120} height={40} />
-            </Link>
+            </Link> */}
           </div>
           
           <div className={styles.mobileCart}>
